@@ -9,7 +9,7 @@ LinkMark is a simple and efficient web application for bookmarking links. Built 
 ## Features
 
 * **User Authentication**: Securely create an account or log in with an existing one.
-* **Add Bookmarks**: Easily add new links by providing a title, the URL, and an optional note.
+* **Add Bookmarks**: Easily add new links by providing a title, the URL, and a note.
 * **Bookmark Management**: View all your saved links on a clean, intuitive home page.
 * **Quick Access**: Each bookmark is displayed as a card with the title and creation date.
 * **Detailed View**: Click on any bookmark card to see the full URL and your personal note.
