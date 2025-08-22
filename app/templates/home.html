@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resp.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/linkmark-logo.ico') }}" type="image/x-icon">
+
+    <!-- jQuery (required by Lobibox) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Lobibox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/js/lobibox.min.js"></script>
+    <!-- Lobibox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/css/lobibox.min.css" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- jBox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jbox/dist/jBox.all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jbox/dist/jBox.all.min.js"></script>
+
+    <title>LinkMark</title>
+</head>
+<body id="home-page">
+    <div class="container resp-container">
+        <div class="header-sec">
+            <div class="username-sec">
+                <img src="{{ url_for('static', filename='assets/images/avatar.png') }}" alt="avatar" class="avatar-icon">
+                <h3 id="username-heading">Welcome back, {{ name }}</h3>
+            </div>
+            <div class="date-sec">
+                <h3 id="date-heading">Date: {{ date }}</h3>
+            </div>
+        </div>
+        <div class="btn-sec">
+            <a href="{{ url_for('add.add') }}" class="btn resp-btn">Add</a>
+            <a href="" class="btn resp-btn" id="logout-btn">Logout</a>
+        </div>
+        <div class="cards-section">
+            <h3 id="marked-subheading">Marked</h3>
+            <div class="cards-sec">
+                {% if records == [] %}
+                    <p id="msg">No bookmarks found. Time to add something interesting!</p>
+                {% else %}
+                    {% for record in records %}
+                        <div class="card" id="{{ record[0] }}">
+                            <div class="data-sec">
+                                <h4 class="title-card">{{ record[1] }}</h4>
+                                <h5 class="date-subtitle">Date created: {{ record[2] }}</h5>
+                            </div>
+                            <div class="card-btn-sec">
+                                <a href="{{ url_for('home.home') }}" id="del-btn" class="delete-btn">
+                                    <img src="{{ url_for('static', filename='assets/icons/delete-icon.png') }}" alt="" class="btn-icon">
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            window.flashedMessages = {{ get_flashed_messages(with_categories = true) | tojson }};
+        });            
+    </script>
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+</body>
+</html>

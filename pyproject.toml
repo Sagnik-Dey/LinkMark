@@ -1,0 +1,10 @@
+[project]
+name = "linkmark"
+version = "0.1.0"
+description = "Bookmark links"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.1",
+    "python-dotenv>=1.1.1",
+]

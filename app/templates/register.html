@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/authen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resp.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/linkmark-logo.ico') }}" type="image/x-icon">
+
+    <!-- jQuery (required by Lobibox) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Lobibox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/js/lobibox.min.js"></script>
+    <!-- Lobibox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/css/lobibox.min.css"/>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <title>LinkMark</title>
+</head>
+<body id="register-page">
+    <div class="container">
+        <h3 id="heading">Create Account</h3>
+        <div class="form-div">
+            <form action="{{ url_for('register.register') }}" method="post">
+                <div class="input-grp">
+                    <label for="username" class="label">Username</label>
+                    <input type="text" class="input" placeholder="Enter username" name="username-input" autocomplete="off" required>
+                </div>
+                <div class="input-grp">
+                    <label for="name" class="label">Name</label>
+                    <input type="text" class="input" placeholder="Enter name" name="name-input" autocomplete="off" required>
+                </div>
+                <div class="input-grp">
+                    <label for="password" class="label">Password</label>
+                    <input type="password" class="input" placeholder="Enter password" name="password-input" id="password" autocomplete="off" required>
+                </div>
+                <button id="register-btn" class="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.messages = {{ get_flashed_messages() | tojson }};
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resp.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/linkmark-logo.ico') }}" type="image/x-icon">
+    <title>LinkMark</title>
+</head>
+<body>
+    <div class="container resp-view-container">
+            <h2 id="title">{{ title }}</h2>
+            <div class="url-box">
+                <h3 id="link">{{ link }}</h3>
+            </div>
+            <h3 id="note">{{ note }}</h3>
+            <a href="{{ url_for('home.home') }}" class="btn resp-btn">Back</a>
+    </div>
+</body>
+</html>

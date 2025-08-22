@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/authen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resp.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/linkmark-logo.ico') }}" type="image/x-icon">
+
+    <!-- jQuery (required by Lobibox) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Lobibox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/js/lobibox.min.js"></script>
+    <!-- Lobibox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/css/lobibox.min.css" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <title>LinkMark</title>
+</head>
+<body id="login-page">
+    <div class="container">
+        <h3 id="heading">Login</h3>
+        <div class="form-div">
+            <form action="{{ url_for('login.login') }}" method="post">
+                <div class="input-grp">
+                    <label for="username-input" class="label">Username</label>
+                    <input type="text" class="input" placeholder="Enter username" name="username-input" autocomplete="off" required>
+                </div>
+                <div class="input-grp">
+                    <label for="password-input" class="label">Password</label>
+                    <input type="password" class="input" placeholder="Enter password" name="password-input" autocomplete="off" required>
+                </div>
+                <button id="login-btn" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            window.flashedMessages = {{ get_flashed_messages(with_categories = true) | tojson }};
+        });
+        
+    </script>
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+</body>
+</html>
