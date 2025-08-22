@@ -40,10 +40,6 @@ LinkMark is a simple and efficient web application for bookmarking links. Built 
 ### Steps
 
 1.  **Clone the Repository**:
-    ```bash
-    git clone [your-repository-url]
-    cd [your-project-directory]
-    ```
 
 2.  **Create a Virtual Environment** (recommended):
     ```bash
