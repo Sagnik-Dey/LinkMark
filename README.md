@@ -1,5 +1,7 @@
 # LinkMark
 
+<img width="256" height="256" alt="linkmark-logo" src="https://github.com/user-attachments/assets/1ca9d022-80e2-46f5-a3db-bd9af284227b" />
+
 LinkMark is a simple and efficient web application for bookmarking links. Built with **Flask**, it allows users to save links with a title and a personal note, making it easy to organize and revisit their favorite web pages.
 
 ---
@@ -14,6 +16,9 @@ LinkMark is a simple and efficient web application for bookmarking links. Built 
 * **Delete Functionality**: Remove bookmarks you no longer need with a single click.
 * **Logout**: A simple way to end your session.
 
+---
+
+<img width="740" alt="image" src="https://github.com/user-attachments/assets/d142a411-02b8-4912-b584-73a2a4efa29b" />
 
 ---
 
@@ -35,10 +40,6 @@ LinkMark is a simple and efficient web application for bookmarking links. Built 
 ### Steps
 
 1.  **Clone the Repository**:
-    ```bash
-    git clone [your-repository-url]
-    cd [your-project-directory]
-    ```
 
 2.  **Create a Virtual Environment** (recommended):
     ```bash
